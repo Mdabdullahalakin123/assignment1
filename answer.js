@@ -3,9 +3,6 @@
 function describeValue(value){
     let valueType = typeof(value);
     let checkBoolean = Boolean(value);
-    if(value === "0"){
-        checkBoolean = false;
-    }
 
     if(checkBoolean == true){
         checkBoolean = "truthy";
@@ -95,11 +92,11 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0){
 
 const getChaseVerdict = (target, scored, ballsLeft) => {
     let runsNeeded = target - scored;
-    requiredRate = (runsNeeded / ballsLeft) * 6
-    if(runsNeeded === 0){
+    let requiredRate = (runsNeeded / ballsLeft) * 6
+    if(runsNeeded <= 0){
         return "Won";
     }
-    else if(ballsLeft === 0){
+    else if(ballsLeft <= 0){
         return "Lost";
     }
     else if(requiredRate <= 6){
