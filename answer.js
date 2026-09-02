@@ -91,7 +91,6 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0){
     }
 }
 
-console.log(getCngFare(5,true, 10));
 // Answer the question no: 5 ---->
 
 const getChaseVerdict = (target, scored, ballsLeft) => {
